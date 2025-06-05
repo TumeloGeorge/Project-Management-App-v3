@@ -1,0 +1,78 @@
+<meta charset="UTF-8">
+<title>Landing Page Architect</title>
+<!-- Boxicons CDN Link -->
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<div #sidebar class="sidebar">
+<div class="logo-details">
+    <i class='bx bxl-c-plus-plus icon'></i>
+    <div class="logo_name">Contrack</div>
+    <i #closeBtn id="btn" class='bx bx-menu' ></i>
+</div>
+<ul class="nav-list">
+    <li>
+        <i #searchBtn class='bx bx-search'></i>
+        <input type="text" placeholder="Search...">
+        <span class="tooltip">Search</span>
+    </li>
+
+
+    <li>
+        <a href="/dashboard" routerLinkActive="active">
+            <i class='bx bx-chat'></i>
+            <span class="links_name">Dashboard</span>
+        </a>
+        <span class="tooltip">Dashboard</span>
+    </li>
+    <li>
+        <a href="#">
+            <i class='bx bx-task'></i>
+            <span class="links_name ">Add Tasks/Objectives</span>
+        </a>
+        <span class="tooltip ">Add Tasks/Objectives</span>
+    </li>
+    <li>
+        <a href="#">
+            <i class='bx bx-pie-chart-alt-2'></i>
+            <span class="links_name">Schedule</span>
+        </a>
+        <span class="tooltip">Schedule</span>
+    </li>
+    <li>
+        <a href="#">
+            <i class='bx bx-folder'></i>
+            <span class=" links_name ">File Manager</span>
+        </a>
+        <span class="tooltip ">Files</span>
+    </li>
+
+    <li>
+        <a href="#">
+            <i class='bx bx-notepad'></i>
+            <span class="links_name ">Reports</span>
+        </a>
+        <span class="tooltip ">Reports</span>
+    </li>
+
+
+
+    <li class="profile">
+        <div class="profile-details">
+            <img src="th.jpeg" alt="profileImg">
+            <div class="name_job">
+                <div class="name">John</div>
+                <div class="job">Architect</div>
+            </div>
+        </div>
+        <i class='bx bx-log-out' id="log_out"></i>
+    </li>
+</ul>
+
+</div>
+<!-- <div #sidebar class="sidebar">
+<button #closeBtn id="btn" class="bx bx-menu"></button>
+<button #searchBtn class="bx bx-search"></button>
+<button (click)="logOut()">Log Out</button>
+</div>
+-->

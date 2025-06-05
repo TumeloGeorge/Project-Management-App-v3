@@ -1,0 +1,36 @@
+<app-sidebar></app-sidebar>
+    <section class="home-section ">
+       
+        <div class="dashboard">
+            <h1>Dashboard</h1>
+          
+            <!-- Notifications Section -->
+            <div class="notifications">
+              <h2>Notifications</h2>
+              <ul>
+                <li *ngFor="let notification of notifications">
+                  {{ notification.message }}
+                </li>
+              </ul>
+            </div>
+          
+            <!-- Task Summary Section -->
+            <div class="task-summary">
+              <h2>Task Summary</h2>
+              <p>Total Tasks: {{ taskSummary.total }}</p>
+              <p>Completed Tasks: {{ taskSummary.completed }}</p>
+              <p>Overdue Tasks: {{ taskSummary.overdue }}</p>
+            </div>
+          
+            <!-- Milestone Progress Section -->
+            <div class="milestones">
+              <h2>Milestones</h2>
+              <div *ngFor="let milestone of milestones">
+                <p>{{ milestone.title }}</p>
+                <progress value="{{ milestone.progress }}" max="100"></progress>
+              </div>
+            </div>
+          </div>
+          
+    </section>
+    
