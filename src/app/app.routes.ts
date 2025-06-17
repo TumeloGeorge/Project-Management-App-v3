@@ -4,6 +4,6 @@ import { TaskListComponent } from './task-list/task-list.component';
 
 export const routes: Routes = [
     {path: 'dashboard', component: DashboardComponent },
-    {path: "tasks", component: TaskListComponent },
+    {path: 'app-task-list', component: TaskListComponent },
     {path: '', redirectTo: '/dashboard', pathMatch: 'full'}
 ];
