@@ -1,0 +1,22 @@
+<section class="home-section">
+  <div class="wrapper">
+    <h2>Welcome to Contrack</h2>
+    <p>Please log in with your Google account to continue.</p>
+
+    <div id="firebaseui-auth-container"></div>
+  </div>
+</section>
+<script src="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth__en.js"></script>
+<script>
+  // Initialize the FirebaseUI Widget using Firebase.
+  var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+  // The start method will wait until the DOM is loaded.
+  ui.start('#firebaseui-auth-container', {
+    signInOptions: [
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID
+    ],
+    tosUrl: '<YOUR_TOS_URL>', // Replace with your Terms of Service URL
+    privacyPolicyUrl: '<YOUR_PRIVACY_POLICY_URL>' // Replace with your Privacy Policy URL
+  });  
+</script>

@@ -1,14 +1,25 @@
-import firebase from 'firebase/compat/app';
-import * as firebaseui from 'firebaseui';
+declare var firebaseui: any;
+declare var firebase: any;
 
-export const firebaseUiAuthConfig: firebaseui.auth.Config = {
+export const firebaseUiAuthConfig = {
   signInFlow: 'popup',
   signInOptions: [
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    // add more options here if needed, like Email/Password:
-    // firebase.auth.EmailAuthProvider.PROVIDER_ID,
+    {
+      provider: 'google.com',
+      scopes: ['email']
+    }
   ],
   tosUrl: '', // optional
   privacyPolicyUrl: '', // optional
   credentialHelper: firebaseui.auth.CredentialHelper.NONE
+};
+export const firebaseUiAuthConfigWithEmail = {
+  ...firebaseUiAuthConfig,
+  signInOptions: [
+    ...firebaseUiAuthConfig.signInOptions,
+    {
+      provider: 'password',
+      requireDisplayName: false
+    }
+  ]
 };

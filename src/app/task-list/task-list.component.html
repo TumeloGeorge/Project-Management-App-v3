@@ -2,13 +2,33 @@
 
 <section class="home-section">
   <div class="wrapper">
+
+    <!-- Header -->
     <div class="header">
       <h2>Add Task / Objective</h2>
-      <p>Assign tasks and objectives to a specific project</p>
+      <p>Assign tasks and objectives to a specific project and track progress</p>
+    </div>
+
+    <!-- Project Progress Section -->
+    <div class="form-group">
+      <label for="progressProject">Track Progress for Project</label>
+      <select id="progressProject" [(ngModel)]="selectedProjectId" (change)="loadProgress(selectedProjectId)">
+        <option *ngFor="let project of projects" [value]="project.id">{{ project.name }}</option>
+      </select>
+    </div>
+
+    <div *ngIf="selectedProjectId">
+      <div *ngIf="tasks.length > 0" class="milestones">
+        <p>Progress: {{ progressPercent }}%</p>
+        <progress [value]="progressPercent" max="100"></progress>
+      </div>
+      <div *ngIf="tasks.length === 0" class="milestones">
+        <p>No tasks found for this project.</p>
+      </div>
     </div>
 
     <!-- Task / Objective Form -->
-    <form class="task-form" (ngSubmit)="onSubmit()">
+    <form class="task-form" #form="ngForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="project">Select Project</label>
         <select id="project" name="project" [(ngModel)]="task.project" required>
@@ -50,13 +70,13 @@
       <button type="submit" class="submit-button">Add Task / Objective</button>
     </form>
 
-    <!-- Task Summary (Future Enhancement Placeholder) -->
+    <!-- Task Summary (Optional future use) -->
     <div class="task-summary">
       <h3>Task Summary</h3>
       <p>Tasks you've added will appear here...</p>
     </div>
 
-    <!-- Notifications (Optional) -->
+    <!-- Notifications -->
     <div class="notifications">
       <h3>Notifications</h3>
       <p>No notifications available.</p>

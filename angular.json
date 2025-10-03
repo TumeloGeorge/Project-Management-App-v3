@@ -27,9 +27,13 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/styles.css",
+              "https://cdn.firebase.com/libs/firebaseui/4.8.0/firebaseui.css"
             ],
-            "scripts": []
+            "scripts": [
+              "https://cdn.firebase.com/libs/firebaseui/4.8.0/firebaseui.js"
+            ]
           },
           "configurations": {
             "production": {

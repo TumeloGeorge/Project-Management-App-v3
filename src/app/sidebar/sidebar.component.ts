@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild, AfterViewInit  } from '@angular/core';
+import { getAuth, signOut } from 'firebase/auth';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,6 +11,7 @@ export class SidebarComponent implements AfterViewInit{
   @ViewChild('sidebar') sidebar!: ElementRef;
   @ViewChild('closeBtn') closeBtn!: ElementRef;
   @ViewChild('searchBtn') searchBtn!: ElementRef;
+  router: any;
 
   ngAfterViewInit(): void {
     // Access the DOM elements and add event listeners
@@ -40,9 +42,13 @@ export class SidebarComponent implements AfterViewInit{
     }
   }
 
-  logOut(): void {
-    // Handle log out functionality here
-    console.log('Logged out successfully!');
-    window.location.href = 'login.php';
+  logout() {
+    const auth = getAuth();
+    signOut(auth).then(() => {
+      console.log('User signed out');
+      this.router.navigate(['/login']);
+    }).catch((error) => {
+      console.error('Logout error:', error);
+    });
   }
 }
