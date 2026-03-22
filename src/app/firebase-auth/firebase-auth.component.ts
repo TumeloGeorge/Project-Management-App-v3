@@ -4,7 +4,7 @@ import { firebaseUiAuthConfig } from '../firebase-ui-config';
 
 @Component({
   selector: 'app-firebase-auth',
-  template: `<firebase-ui [config]="uiConfig"></firebase-ui>`,
+  templateUrl: './firebase-auth.component.html',
   standalone: true,
   imports: [/* FirebaseUiAngularModule will be in app.config */],
 })

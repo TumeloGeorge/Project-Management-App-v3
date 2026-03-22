@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
-  selector: 'app-schedule',
+  selector: 'app-file-manager',
   imports: [ SidebarComponent ],
-  templateUrl: './schedule.component.html',
-  styleUrl: './schedule.component.css'
+  templateUrl: './file-manager.component.html',
+  styleUrl: './file-manager.component.css'
 })
-export class ScheduleComponent {
+export class FileManagerComponent {
 
 }

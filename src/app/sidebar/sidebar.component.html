@@ -1,5 +1,5 @@
 <meta charset="UTF-8">
-<title>Landing Page Architect</title>
+<title>Side Bar</title>
 <!-- Boxicons CDN Link -->
 <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
 <div #sidebar class="sidebar">
 <div class="logo-details">
     <i class='bx bxl-c-plus-plus icon'></i>
-    <div class="logo_name">Contrack</div>
+    <div class="logo_name">TaskMaster</div>
     <i #closeBtn id="btn" class='bx bx-menu' ></i>
 </div>
 <ul class="nav-list">
@@ -20,7 +20,7 @@
 
     <li>
         <a href="/dashboard" routerLinkActive="active">
-            <i class='bx bx-chat'></i>
+            <i class='bx bx-desktop'></i>
             <span class="links_name">Dashboard</span>
         </a>
         <span class="tooltip">Dashboard</span>
@@ -33,14 +33,14 @@
         <span class="tooltip ">Add Tasks/Objectives</span>
     </li>
     <li>
-        <a href="#">
-            <i class='bx bx-pie-chart-alt-2'></i>
+        <a href="/app-schedule" routerLinkActive="active">
+            <i class='bx bx-calendar-alt'></i>
             <span class="links_name">Schedule</span>
         </a>
         <span class="tooltip">Schedule</span>
     </li>
     <li>
-        <a href="#">
+        <a href="/app-file-manager" routerLinkActive="active">
             <i class='bx bx-folder'></i>
             <span class=" links_name ">File Manager</span>
         </a>
@@ -48,7 +48,7 @@
     </li>
 
     <li>
-        <a href="#">
+        <a href="/app-reports" routerLinkActive="active">
             <i class='bx bx-notepad'></i>
             <span class="links_name ">Reports</span>
         </a>
@@ -59,7 +59,7 @@
 
     <li class="profile">
         <div class="profile-details">
-            <img src="th.jpeg" alt="profileImg">
+            <i class='bx bx-user'></i>
             <div class="name_job">
                 <div class="name">John</div>
                 <div class="job">Architect</div>
@@ -70,7 +70,8 @@
 
     <li class="profile">
   <div class="profile-details">
-    <img src="th.jpeg" alt="profileImg">
+                <i class='bx bx-user'></i>
+
     <div class="name_job">
       <div class="name">User</div>
       <div class="job">Logged in</div>

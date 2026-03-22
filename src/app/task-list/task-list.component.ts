@@ -3,12 +3,14 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 import { Firestore, collection, addDoc, where, collectionData, query } from '@angular/fire/firestore';
 import { getAuth } from 'firebase/auth';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common'; // for *ngFor binding
+
 
 
 @Component({
   selector: 'app-task-list',
   standalone: true,
-  imports: [SidebarComponent],
+  imports: [SidebarComponent, FormsModule, CommonModule], // Always update to ensure imports are poropergated to the HTML side
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.css']
 })
@@ -32,7 +34,7 @@ export class TaskListComponent {
   };
 
   constructor(private firestore: Firestore) {}
-
+ // Submit to the fire store DB
   async onSubmit() {
     const auth = getAuth();
     const user = auth.currentUser;
@@ -76,12 +78,12 @@ export class TaskListComponent {
   /**
    * Load tasks and calculate progress for a specific project.
    * @param projectId The ID of the project to load tasks for.
-   */  async loadProgress(projectId: string) {
+   */  
+    async loadProgress(projectId: string) {
     const auth = getAuth();
     const user = auth.currentUser;
     if (!user) return;
 
-    this.selectedProjectId = projectId;
     const tasksRef = collection(this.firestore, `users/${user.uid}/tasks`);
     const q = query(tasksRef, where('projectId', '==', projectId));
     
